@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PB studio ponúka služby v oblasti stavebníctva, vrátane projektovania, statických posudkov, pasportu stavieb, 3D modelovania a virtuálnych prehliadok.">
+    <meta name="keywords" content="projektovanie, statika, pasport stavieb, 3D model, 3d model, 3D modely, virtuálne prehliadky, virtuálna prehliadka, stavebné povolenie, ohlásenie drobných stavieb, drobné stavby, ohlásenie drobnej stavby, jednoduchá stavba, jednoduché stavby, statický posudok, posúdenie statiky, street view, Google street view, Matterport">
+    <meta name="author" content="Peter Bendík">
+    <meta name="robots" content="index, follow">
+        <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 2;
+            transition: background 0.5s ease-in-out;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 36px;
+            
+            letter-spacing: 2px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 15px 0;
+            animation: slideDown 0.8s ease-in-out;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 12px 18px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        nav ul li a:hover {
+            background: #666;
+            border-radius: 10px;
+            transform: scale(1.15);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 2000px;
+            margin: auto;
+            padding: 50px;
+            text-align: center;
+        }
+        section {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .services-list {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .service-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            min-width: 200px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .service-item:hover {
+            background: #ddd;
+            transform: scale(1.10);
+        }
+        .service-item i {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+ 	}
+          
+	ul {
+            text-align: left;
+            display: inline-block;
+            padding-left: 100px;
+        }
+          img {
+    border-radius: 15px;
+}
+    </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body onload="showSection('domov')">
+    <header>
+        <h1>PB studio</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('domov')">Domov</a></li>
+            <li><a href="#" onclick="showSection('sluzby')">Služby</a></li>
+            <li><a href="#" onclick="showSection('kontakt')">Kontakt</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="domov" class="active">
+            <h2>Služby v oblasti stavebníctva</h2>
+           <div class="services-list">
+                <a class="service-item" onclick="showSection('projektovanie')">
+                    <i class="fa fa-home"></i>
+                    Projektovanie
+                </a>
+                <a class="service-item" onclick="showSection('statika')">
+                    <i class="fa fa-calculator"></i>
+                    Statické posudky
+                </a>
+                <a class="service-item" onclick="showSection('pasport')">
+                    <i class="fa fa-file-alt"></i>
+                    Pasport stavieb
+                </a>
+                <a class="service-item" onclick="showSection('3dmodely')">
+                    <i class="fa fa-cube"></i>
+                    3D modely
+                </a>
+                <a class="service-item" onclick="showSection('prehliadky')">
+                    <i class="fa fa-camera"></i>
+                    Virtuálne prehliadky
+                </a>
+             <h3>V prípade potreby ma neváhajte kontaktovať a vypracujem Vám ponuku podľa Vašich predstáv.</h3>
+            </div>
+                 
+        </section>
+        
+        <section id="sluzby">
+            <h2>Moje služby</h2>
+            <div class="services-list">
+                <a class="service-item" onclick="showSection('projektovanie')">
+                    <i class="fa fa-home"></i>
+                    Projektovanie
+                </a>
+                <a class="service-item" onclick="showSection('statika')">
+                    <i class="fa fa-calculator"></i>
+                    Statické posudky
+                </a>
+                <a class="service-item" onclick="showSection('pasport')">
+                    <i class="fa fa-file-alt"></i>
+                    Pasport stavieb
+                </a>
+                <a class="service-item" onclick="showSection('3dmodely')">
+                    <i class="fa fa-cube"></i>
+                    3D modely
+                </a>
+                <a class="service-item" onclick="showSection('prehliadky')">
+                    <i class="fa fa-camera"></i>
+                    Virtuálne prehliadky
+                </a>
+            </div>
+        </section>
+        
+        <!-- Sekcie pre jednotlivé služby -->
+        <section id="projektovanie" class="service-content">
+            <h2>Projektovanie</h2>
+            <h3>Projekt pre stavebné povolenie jednoduchých stavieb</h3>
+            <p>Vypracovanie projektovej dokumentácie potrebnej na získanie stavebného povolenia. Táto služba zahŕňa kompletnú projektovú dokumentáciu vrátane všetkých profesii.</p>
+            <h4>Patria sem:</h4>
+            <ul>
+                <li>Rodinné domy</li>
+                <li>Garáže</li>
+                <li>Menšie priemyselné objekty</li>
+		</ul>
+            <br>
+          <br>
+          <br>
+            <h3>Projekt pre ohlásenie drobných stavieb</h3>
+            <p>Ohlásenie drobných stavieb, ktoré obsahuje zjednodušenú projektovú dokumentáciu.</p>
+            <h4>Patria sem:</h4>
+             <ul>
+                <li>Prístrešky</li>
+                <li>Altánky</li>
+                <li>Záhradné domčeky</li>
+               <li>Oplotenie</li>
+            </ul>
+        </section>
+        
+        <section id="statika" class="service-content">
+            <h2>Statické posudky</h2>
+              <p>Zhotovenie statických posudkov jednoduchých stavieb pre stavebné povolenie.</p>
+            <h4>Patria sem:</h4>
+         <ul>   
+                <li>Rodinné domy</li>
+                <li>Menšie priemyselné objekty</li>
+                <li>Prístrešky</li>
+                <li>Garáže</li>         
+        </ul>
+          </section>
+        <section id="3dmodely" class="service-content">
+            <h2>Tvorba 3D modelov</h2>
+            <p>3D modeloy pre výrobu, 3D tlač, vizualizáciu a podobne. Modely vytváram v programoch Solidworks a AutoCAD inventor vo formátoch STEP, STL, DWG atď.</p>
+         <img src="https://lh3.googleusercontent.com/d/16KKtc2zfH3JHQfZy_vysRYrbpdVufrqT" alt="Ukážka 3D modelu" width="500">
+           <br>
+ <br>
+          <img src="https://lh3.googleusercontent.com/d/1hXBjZsdLRuphC_6TGUJMP13vsW6rk5ml" alt="Ukážka 3D modelu" width="1000">
+
+        </section>
+
+        <section id="prehliadky" class="service-content">
+            <h2>Virtuálne prehliadky</h2>
+            <p>Vytvorenie virtuálnych prehliadok vaších nehnuteľností s 360° fotografiami. Prehliadky vyhotovujem pre Google street view a server Matterport.</p>
+            <h4>Vhodné pre:</h4>
+            <ul>  
+                <li>Predaj nehnuteľností</li>
+                <li>Prezentáciu podniku</li>
+                <li>Správu nehnuteľností</li>
+            </ul>
+          <br>
+          <h4>Matterport:</h4>
+          <iframe width="853" height="480" src="https://my.matterport.com/show/?m=nXRjuRwUSLH" frameborder="0" allowfullscreen allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"style="border-radius: 15px"></iframe>
+          <br>
+          <h4>Google street view:</h4>
+     <iframe src="https://www.google.com/maps/embed?pb=!4v1740401539981!6m8!1m7!1sCAoSLEFGMVFpcE1GTUg4SWlkWTF2Nk1oRFpOZkFZSXBZa3FGUG5CWnlhcmpwQkRM!2m2!1d48.30464918163005!2d18.06286332986814!3f220.01806933483823!4f1.5891473844605741!5f0.4000000000000002" width="853" height="480" style="border-radius: 15px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
+
+        <section id="pasport" class="service-content">
+            <h2>Pasport stavieb</h2>
+              <p>Vytvorenie projektovej dokumentácie skutkového stavu jestvujúcich stavieb na základe presného zamerania.</p>
+            <p>Možnosť použitia profesionálneho 3D skeneru Matterport Pro3 pre presné zameranie a vytvorenie digitálnej dvojičky stavby.</p>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Email: bendik.pb@gmail.com</p>
+            <p>Telefón: +421 910 365 853</p>
+          <h4>Fakturačné údaje:</h4>
+          <p>Ing. Peter Bendík</p>
+          <p>IČO: 56679246   DIČ: 1120438847</p>
+          <p>Zbehy 228, 951 42 Zbehy, Slovenská republika</p>
+          
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Peter Bendík. Všetky práva vyhradené.</p>
+    </footer>
+
+    <script>
+   function showSection(sectionId) {
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+    });
+    setTimeout(() => {
+        document.getElementById(sectionId).classList.add('active');
+    }, 100);
+    history.pushState(null, null, '#' + sectionId);
+}
+    </script>
+</body>
+</html>
